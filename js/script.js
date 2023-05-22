@@ -192,12 +192,85 @@
 // langs.sort((a, b) => a.localeCompare(b));
 // console.log(langs);
 
-function add(a, b, c) {
-  let result = a + b + c;
-  console.log(`Addition result equals ${result}`);
-  return result;
-}
+// function add(a, b, c) {
+//   let result = a + b + c;
+//   console.log(`Addition result equals ${result}`);
+//   return result;
+// }
 
-add(15, 27, 10);
-add(10, 20, 30);
-add(5, 10, 15);
+// add(15, 27, 10);
+// add(10, 20, 30);
+// add(5, 10, 15);
+
+// const book = {
+//   title: "The Last Kingdom",
+//   author: "Bernard Cornwell",
+//   genres: ["historical prose", "adventure"],
+//   isPublic: true,
+//   rating: 8.38,
+// };
+// book.pageCount = 99;
+// let bookPages = book.pageCount;
+// console.log(bookPages);
+
+// const bookTitle = book.title;
+// console.log(bookTitle); // 'The Last Kingdom'
+
+// const bookGenres = book.genres;
+// console.log(bookGenres); // ['historical prose', 'adventurs']
+
+// const bookPrice = book.price;
+// console.log(bookPrice); // undefined
+
+// const name = "Генрі Сибола";
+// const age = 25;
+
+// const user = {
+//   name,
+//   age,
+// };
+// console.log(user.name);
+// console.log(user.age);
+// const bookShelf = {
+//   books: ["The Last Kingdom", "Dream Guardian"],
+//   // Це метод об'єкта
+//   getBooks() {
+//     console.log("Цей метод буде повертати всі книги - властивість books");
+//   },
+//   // Це метод об'єкта
+//   addBook() {
+//     console.log("Цей метод буде додавати нову книгу у властивість books");
+//   },
+// };
+
+// // Виклики методів
+// bookShelf.getBooks();
+// bookShelf.addBook("Maugli", "NeRabotae");
+// const bookShelf = {
+//   books: ["The Last Kingdom"],
+//   getBooks() {
+//     console.log(this);
+//   },
+//   addBook() {
+//     console.log("Цей метод буде додавати нову книгу у властивість books");
+//   },
+// };
+
+// // Перед крапкою знаходиться об'єкт bookShelf,
+// // тому, викликаючи метод, this буде зберігати посилання на нього.
+// bookShelf.getBooks(); // {books: ['The Last Kingdom'], getBooks: f}
+const bookShelf = {
+  books: ["The Last Kingdom"],
+  getBooks() {
+    return this.books;
+  },
+  addBook(bookName) {
+    this.books.push("Maugli");
+  },
+  // removeBook(bookName) {
+  //   const bookIndex = this.books.indexOf(bookName);
+  //   this.books.splice(bookIndex, 1);
+  // },
+};
+
+console.log(bookShelf.getBooks()); // ["The Last Kingdom"]
